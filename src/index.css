@@ -5,9 +5,56 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#dropdownLocation{
+  margin:4px;
+  padding: 4px;
+}
+
+#dropdownSpeciality{
+  margin:4px;
+  padding: 4px;
+}
+
+#textboxSearch{
+  width: 400px;
+  height: 25px;
+  /* border-radius: 1px; */
+}
+
+#buttonSearch{
+  margin-left: 8px;
+  width: 100px;
+  height: 25px;
+}
+
+.divSection{
+  border: groove 2px #aabbcc;
+  border-radius: 4px;
+  text-align: cemter;
+  margin: 16px;
+  padding: 4px;
+}
+
+.divSearchResult{
+  margin: 4px;
+  padding: 4px;
+  background-color: #ccffcc;
+  color: #010101;
+  border: ridge 2px #2affa2;
+  border-radius: 8px;
+  width: 350px;
+}
+
+#textboxCreateReview{
+  min-width: 400px;
+  min-height: 50px;
 }
