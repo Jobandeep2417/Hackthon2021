@@ -11,21 +11,25 @@ import Review from './Review';
 import Search from './Search';
 import ReviewForm from './ReviewForm'
 import Story from './Story';
-
+import Navbar from './Navbar';
 function App() {
   return (
+    <>
     <Router>
-           <div className="App">
+    <Navbar style={{maxWidth:'100%'}} />
+
+           <div style={{textAlign:'center'}}> 
             <Switch>
               <Route exact path='/' component={Home}></Route>
-              <Route exact path='/review/:id' children={<Review/>}></Route>
-              <Route exact path='/story/:id' children={<Story/>}></Route>
+              <Route exact path='/review/:id/:city' children={<Review/>}></Route>
+              <Route exact path='/story/:id/:city' children={<Story/>}></Route>
               <Route exact path='/search' component={Search}></Route>
               <Route exact path='/reviewForm' component={ReviewForm}></Route>
             </Switch>
           </div>
     </Router>
     
+    </>
   );
 }
 

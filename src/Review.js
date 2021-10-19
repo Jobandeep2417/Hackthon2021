@@ -7,6 +7,9 @@ import {
     useParams,
   } from 'react-router-dom';
   import React, { useState, useEffect } from 'react';
+import {Card,Button} from "react-bootstrap"
+import logo from './Spinner-1s-417px.gif'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 async function postData(url = '', data = {}) {
     // Default options are marked with *
@@ -29,7 +32,7 @@ async function postData(url = '', data = {}) {
 
 function Review(){
 
-    const {id} = useParams();
+    const {id,city} = useParams();
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
@@ -37,7 +40,7 @@ function Review(){
 
     console.log(id)
     const data ={
-        "City": "Hyderabad", 
+        "City": city, 
         "Industry": null, 
         "Id": null, 
         "EntityName": null, 
@@ -71,25 +74,44 @@ function Review(){
 
         console.log("items: ",items)
     }, [])
-  
+    
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
-      return <div>Loading...</div>;
+      return <div><img src={logo} alt="loading..." /></div>;
     } else {
       return (
-        <div>
-            {items.map(element => {
+        
+        <>
+        {items.length==0?<br></br>:<h2>Reviews For {items[0].userId}</h2>}
+        <div className="container" >
+            {items.map(item => {
                return (
-                   <>
-                   <h1>{element.story}</h1>
-                   <h1><Link to={`/story/${element.id}`} className="btn">Read More</Link></h1>
-                </>
+                   <div className="mb-4 mt-4 ml-4 mr-4" >
+                    <Card style={{ width: '18rem' },{textAlign:'center'}}>
+                        <Card.Body>
+                            <Card.Title>Review: {item.story}</Card.Title>
+                            <Card.Subtitle className="mt-4">{`Review Tags: ${item.tags.map((tag)=>` ${tag} `)}`}</Card.Subtitle>
+                            
+                            <Card.Text className="mb-4 mt-4">
+                            {item.location.city}
+                            </Card.Text>
+                            <Button id="btnAdd" >{item.upvotes} <i className='fas fa-angle-double-up'></i></Button>
+                            <Button id="deleteBtn" >{item.downvotes} <i className='fas fa-angle-double-down'></i></Button>
+                            <br></br>
+                            {/* <h4 className="mt-2"></h4> */}
+                            <Link to={`/story/${item.id}/${item.location.city}`} ><Button variant="primary">Read More</Button></Link>
+                            
+                        </Card.Body>
+                        </Card>
+                   {console.log(item)}
+                </div>
 
                );
             })}
 
         </div>
+        </>
       );
     }
 }
