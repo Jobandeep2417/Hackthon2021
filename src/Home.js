@@ -23,20 +23,20 @@ function Home(){
     <div className="divSection container pt-4 " >
         <div className="mt-4">
 
-          <select id="dropdownLocation">
+          <select id="dropdownLocation" className="ml-2 mr-2">
             <option value="Hyderabad">Hyderabad</option>
             <option value="Noida">Noida</option>
             <option value="Bengaluru">Bengaluru</option>
           </select>
 
-          <select id="dropdownSpeciality">
+          <select id="dropdownSpeciality" className="ml-2 mr-2">
             <option value="Orthopaedics">Orthopaedics</option>
             <option value="Cardiologist">Cardiologist</option>
             <option value="Dentist">Dentist</option>
             <option value="ENT">ENT</option>
           </select>
 
-          <input id="textboxSearch" placeholder="Doctor Name" className="mt-1 form input" type="search" maxLength="200"></input>
+          <input id="textboxSearch" placeholder="Doctor Name" className="mt-1 ml-2 mr-2 form input" type="search" maxLength="200"></input>
           <button className="btn-primary rounded ml-4 mb-4 pt-2 pb-2 pl-2 pr-2" type="submit"  onClick={()=>{setFlag(p => p+1)}}>Search</button>
         </div>
 

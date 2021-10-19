@@ -40,13 +40,13 @@ code {
   border: groove 2px #aabbcc;
   border-radius: 4px;
   text-align: cemter;
-  margin: 16px;
-  padding: 4px;
+  /* margin: 16px;
+  padding: 4px; */
 }
 
 .divSearchResult{
-  margin: 4px;
-  padding: 4px;
+  /* margin: 4px;
+  padding: 4px; */
   background-color: #ccffcc;
   color: #010101;
   border: ridge 2px #2affa2;

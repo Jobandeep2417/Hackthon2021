@@ -21,7 +21,7 @@ function App() {
            <div style={{textAlign:'center'}}> 
             <Switch>
               <Route exact path='/' component={Home}></Route>
-              <Route exact path='/review/:id/:city' children={<Review/>}></Route>
+              <Route exact path='/review/:id/:city/:doctor' children={<Review/>}></Route>
               <Route exact path='/story/:id/:city' children={<Story/>}></Route>
               <Route exact path='/search' component={Search}></Route>
               <Route exact path='/reviewForm' component={ReviewForm}></Route>

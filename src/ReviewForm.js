@@ -47,7 +47,7 @@ function ReviewForm(){
     const handleSubmit = async(e) => {
 
         const data = {
-            "City":city,
+            "City":"Hyderabad",
             "EntityName":doctorName,
             "Speciality":speciality,
             "Story":review,
@@ -155,6 +155,7 @@ function ReviewForm(){
             <select value={speciality} onChange={(e)=>{setspeciality(e.target.value)}}>
                 <option value="Orthopedic">Orthopedic</option>
                 <option value="Dentist">Dentist</option>
+                <option value="Cardiologist">Cardiologist</option>
                 <option value="ENT">ENT</option>
             </select>
           </div>
@@ -177,7 +178,7 @@ function ReviewForm(){
             />
           </div>
           <button type='submit' className='btn' onClick={handleSubmit}>
-            add person
+            Add Review
           </button>
         </form>
       </article>

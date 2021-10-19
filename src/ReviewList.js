@@ -135,9 +135,9 @@ console.log("props",props)
                             {item.location.city}
                             </Card.Text>
 
-                            <Link to={`/review/${item.id}/${item.location.city}`} ><Button variant="primary">Read More</Button></Link>
+                            <Link to={`/review/${item.id}/${item.location.city}/${item.entityName}`} ><Button variant="primary">Read More</Button></Link>
                             <Button id="rating" ><div style={{display:'inline'}}>
-                                {Math.floor(Math.random() * 5)}/5 <i style={{display:'inline'}} className='fas fa-star'></i>
+                                {Math.floor(Math.random() * 5)} <i style={{display:'inline'}} className='fas fa-star'></i>
                                 </div></Button>
                             
                         </Card.Body>

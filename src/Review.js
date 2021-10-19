@@ -32,7 +32,7 @@ async function postData(url = '', data = {}) {
 
 function Review(){
 
-    const {id,city} = useParams();
+    const {id,city,doctor} = useParams();
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
@@ -83,7 +83,7 @@ function Review(){
       return (
         
         <>
-        {items.length==0?<br></br>:<h2>Reviews For {items[0].userId}</h2>}
+        {items.length==0?<br></br>:<h2>Reviews For {doctor}</h2>}
         <div className="container" >
             {items.map(item => {
                return (
